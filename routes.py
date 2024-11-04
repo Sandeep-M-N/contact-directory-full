@@ -58,3 +58,15 @@ def contact(id):
         db.session.delete(contact)
         db.session.commit()
         return jsonify({"message": "Contact deleted"})
+    
+@api.route('/groups', methods=['GET'])
+@jwt_required()
+def get_groups():
+    try:
+        # Query distinct group names
+        user_id = get_jwt_identity()
+        groups = db.session.query(Contact.group_name).distinct().all()
+        group_list = [group[0] for group in groups if group[0] is not None]  # Extract group names and filter out None
+        return jsonify(group_list), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
