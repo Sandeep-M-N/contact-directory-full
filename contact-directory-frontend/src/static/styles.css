@@ -1,0 +1,70 @@
+/* styles.css */
+
+body {
+    background-color: #e0f7fa;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #2C2C2C;
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    flex-shrink: 0;
+}
+
+/* List Item Styles */
+.list-item {
+    color: #ffffff;
+    transition: background-color 0.3s;
+}
+
+.list-item:hover {
+    background-color: #eb249f;
+    cursor: pointer;
+}
+
+/* Selected List Item */
+.list-item.selected {
+    background-color: #1e88e5;
+}
+
+/* Content Styles */
+.content {
+    padding: 20px;
+    margin-left: 20px;
+    flex: 1;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+button {
+    background-color: #f44336;
+    color: #ffffff;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #d32f2f;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .content {
+        margin-left: 10px;
+    }
+}
